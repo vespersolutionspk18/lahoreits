@@ -69,68 +69,69 @@ export default function Dashboard() {
         <main className="flex-1 relative overflow-hidden">
           <MapContainer />
 
-          {/* Location indicator */}
+          {/* Location indicator - responsive positioning */}
           <motion.div
-            className="absolute bottom-4 left-4 px-3 py-1.5 glass-panel rounded-lg flex items-center gap-2"
+            className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 px-2 sm:px-3 py-1 sm:py-1.5 glass-panel rounded-lg flex items-center gap-1.5 sm:gap-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <div className="w-2 h-2 rounded-full bg-[#00ff88] animate-pulse" />
-            <span className="text-xs font-mono text-[#8b9cb3]">
-              LAHORE METROPOLITAN AREA
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#00ff88] animate-pulse" />
+            <span className="text-[10px] sm:text-xs font-mono text-[#8b9cb3]">
+              <span className="hidden sm:inline">LAHORE METROPOLITAN AREA</span>
+              <span className="sm:hidden">LAHORE</span>
             </span>
           </motion.div>
 
-          {/* Coordinates */}
+          {/* Coordinates - hidden on small mobile */}
           <motion.div
-            className="absolute bottom-4 right-4 px-3 py-1.5 glass-panel rounded-lg"
+            className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 px-2 sm:px-3 py-1 sm:py-1.5 glass-panel rounded-lg hidden xs:block"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <span className="text-xs font-mono text-[#00f0ff]">
+            <span className="text-[10px] sm:text-xs font-mono text-[#00f0ff]">
               31.5204° N, 74.3587° E
             </span>
           </motion.div>
 
-          {/* Legend */}
+          {/* Legend - responsive */}
           <motion.div
-            className="absolute top-4 left-4 glass-panel rounded-lg p-3"
+            className="absolute top-2 sm:top-4 left-2 sm:left-4 glass-panel rounded-lg p-2 sm:p-3"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
           >
-            <h3 className="text-[10px] font-semibold text-[#8b9cb3] mb-2 tracking-widest">LEGEND</h3>
-            <div className="space-y-1.5">
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ff6b00]" />
-                <span className="text-[10px] text-[#8b9cb3]">Orange Line</span>
+            <h3 className="text-[9px] sm:text-[10px] font-semibold text-[#8b9cb3] mb-1.5 sm:mb-2 tracking-widest">LEGEND</h3>
+            <div className="space-y-1 sm:space-y-1.5">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff6b00]" />
+                <span className="text-[9px] sm:text-[10px] text-[#8b9cb3]">Orange Line</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#dc2626]" />
-                <span className="text-[10px] text-[#8b9cb3]">Metro Bus</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#dc2626]" />
+                <span className="text-[9px] sm:text-[10px] text-[#8b9cb3]">Metro Bus</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#22c55e]" />
-                <span className="text-[10px] text-[#8b9cb3]">Signals</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#22c55e]" />
+                <span className="text-[9px] sm:text-[10px] text-[#8b9cb3]">Signals</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ff0080]" />
-                <span className="text-[10px] text-[#8b9cb3]">Cameras</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#ff0080]" />
+                <span className="text-[9px] sm:text-[10px] text-[#8b9cb3]">Cameras</span>
               </div>
             </div>
           </motion.div>
 
           {/* Data refresh indicator */}
           <motion.div
-            className="absolute top-4 right-4 px-2 py-1 glass-panel rounded flex items-center gap-1.5"
+            className="absolute top-2 sm:top-4 right-2 sm:right-4 px-1.5 sm:px-2 py-0.5 sm:py-1 glass-panel rounded flex items-center gap-1 sm:gap-1.5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00ff88] animate-pulse" />
-            <span className="text-[10px] font-mono text-[#8b9cb3]">LIVE</span>
+            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#00ff88] animate-pulse" />
+            <span className="text-[9px] sm:text-[10px] font-mono text-[#8b9cb3]">LIVE</span>
           </motion.div>
         </main>
 

@@ -43,6 +43,9 @@ interface MapState {
     id: number | null;
     data: unknown;
   };
+  // Mobile UI state
+  leftSidebarOpen: boolean;
+  rightSidebarOpen: boolean;
 
   // Actions
   setCenter: (center: [number, number]) => void;
@@ -55,6 +58,9 @@ interface MapState {
   clearAlerts: () => void;
   setSelectedItem: (type: MapState['selectedItem']['type'], id: number | null, data?: unknown) => void;
   clearSelection: () => void;
+  toggleLeftSidebar: () => void;
+  toggleRightSidebar: () => void;
+  closeSidebars: () => void;
 }
 
 const LAHORE_CENTER: [number, number] = [31.5204, 74.3587];
@@ -90,6 +96,10 @@ export const useMapStore = create<MapState>((set) => ({
     id: null,
     data: null,
   },
+
+  // Mobile UI state
+  leftSidebarOpen: false,
+  rightSidebarOpen: false,
 
   setCenter: (center) => set({ center }),
   setZoom: (zoom) => set({ zoom }),
@@ -128,5 +138,20 @@ export const useMapStore = create<MapState>((set) => ({
 
   clearSelection: () => set({
     selectedItem: { type: null, id: null, data: null },
+  }),
+
+  toggleLeftSidebar: () => set((state) => ({
+    leftSidebarOpen: !state.leftSidebarOpen,
+    rightSidebarOpen: false, // Close right when opening left
+  })),
+
+  toggleRightSidebar: () => set((state) => ({
+    rightSidebarOpen: !state.rightSidebarOpen,
+    leftSidebarOpen: false, // Close left when opening right
+  })),
+
+  closeSidebars: () => set({
+    leftSidebarOpen: false,
+    rightSidebarOpen: false,
   }),
 }));

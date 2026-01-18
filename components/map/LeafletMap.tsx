@@ -35,13 +35,14 @@ export default function LeafletMap() {
       minZoom={mapConfig.minZoom}
       maxZoom={mapConfig.maxZoom}
       zoomControl={false}
+      attributionControl={false}
       className="w-full h-full"
       style={{ background: '#0a0a0f' }}
     >
-      {/* Dark tile layer */}
+      {/* Dark tile layer - no attribution */}
       <TileLayer
         url={mapConfig.tileProviders.cartoDark.url}
-        attribution={mapConfig.tileProviders.cartoDark.attribution}
+        attribution=""
       />
 
       {/* Custom zoom control position */}

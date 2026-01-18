@@ -238,7 +238,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop sidebar - always visible on lg+ */}
-      <aside className="hidden lg:flex w-72 glass-panel border-r border-[#00f0ff]/10 flex-col h-full">
+      <aside className="hidden lg:flex w-72 glass-panel border-r border-[#00f0ff]/10 flex-col h-full pointer-events-auto">
         {sidebarContent}
       </aside>
 

@@ -71,7 +71,7 @@ export default function Dashboard() {
 
           {/* Location indicator - responsive positioning */}
           <motion.div
-            className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 px-2 sm:px-3 py-1 sm:py-1.5 glass-panel rounded-lg flex items-center gap-1.5 sm:gap-2"
+            className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 px-2 sm:px-3 py-1 sm:py-1.5 glass-panel rounded-lg flex items-center gap-1.5 sm:gap-2 pointer-events-none"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -85,7 +85,7 @@ export default function Dashboard() {
 
           {/* Coordinates - hidden on small mobile */}
           <motion.div
-            className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 px-2 sm:px-3 py-1 sm:py-1.5 glass-panel rounded-lg hidden xs:block"
+            className="absolute bottom-2 sm:bottom-4 right-2 sm:right-4 px-2 sm:px-3 py-1 sm:py-1.5 glass-panel rounded-lg hidden xs:block pointer-events-none"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -97,7 +97,7 @@ export default function Dashboard() {
 
           {/* Legend - responsive */}
           <motion.div
-            className="absolute top-2 sm:top-4 left-2 sm:left-4 glass-panel rounded-lg p-2 sm:p-3"
+            className="absolute top-2 sm:top-4 left-2 sm:left-4 glass-panel rounded-lg p-2 sm:p-3 pointer-events-none"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
@@ -125,7 +125,7 @@ export default function Dashboard() {
 
           {/* Data refresh indicator */}
           <motion.div
-            className="absolute top-2 sm:top-4 right-2 sm:right-4 px-1.5 sm:px-2 py-0.5 sm:py-1 glass-panel rounded flex items-center gap-1 sm:gap-1.5"
+            className="absolute top-2 sm:top-4 right-2 sm:right-4 px-1.5 sm:px-2 py-0.5 sm:py-1 glass-panel rounded flex items-center gap-1 sm:gap-1.5 pointer-events-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}

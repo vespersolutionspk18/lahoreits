@@ -411,6 +411,12 @@
 .leaflet-container {
   background: var(--space-black) !important;
   font-family: 'Space Grotesk', sans-serif !important;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 0;
+  position: relative;
 }
 
 .leaflet-control-zoom {
@@ -429,14 +435,9 @@
   background: rgba(0, 240, 255, 0.1) !important;
 }
 
+/* Hide attribution completely */
 .leaflet-control-attribution {
-  background: rgba(13, 17, 23, 0.8) !important;
-  color: var(--cool-gray) !important;
-  font-size: 10px !important;
-}
-
-.leaflet-control-attribution a {
-  color: var(--electric-cyan) !important;
+  display: none !important;
 }
 
 .leaflet-popup-content-wrapper {
